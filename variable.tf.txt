@@ -1,0 +1,31 @@
+#user can create any number of subnets
+variable "public_subnet_cidr" { 
+    type = list
+    default = ["10.0.1.0/24","10.0.2.0/24"]
+}
+
+variable "azs" {
+    type = list
+    default = ["ap-south-1a","ap-south-1b"]
+}
+
+variable "public_subnet_name" {
+    type = list
+    default = ["public-1a","public-1b"]
+}
+
+variable "private_subnets" {
+    type = map
+    default = {
+        private-subnet-1 = {
+            Name = "private-1a"
+            cidr = "10.011.0/24"
+            az = "ap-south-1a"
+        }
+        private-subnet-1 = {
+            Name = "private-1a"
+            cidr = "10.011.0/24"
+            az = "ap-south-1a"
+       }
+    }
+}
